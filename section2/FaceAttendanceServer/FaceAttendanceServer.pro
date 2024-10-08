@@ -15,26 +15,40 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
-win32{
-    INCLUDEPATH += D:\Embedded\lib\opencv452\include
-    INCLUDEPATH += D:\Embedded\lib\opencv452\include\opencv2
-    INCLUDEPATH += D:\Embedded\lib\SeetaFace\include
-    INCLUDEPATH += D:\Embedded\lib\SeetaFace\include\seeta
+#win32{
+#    INCLUDEPATH += D:\Embedded\lib\opencv452\include
+#    INCLUDEPATH += D:\Embedded\lib\opencv452\include\opencv2
+#    INCLUDEPATH += D:\Embedded\lib\SeetaFace\include
+#    INCLUDEPATH += D:\Embedded\lib\SeetaFace\include\seeta
 
-    LIBS += D:\Embedded\lib\opencv452\x64\mingw\lib\libopencv*
-    LIBS += D:\Embedded\lib\SeetaFace\lib\libSeeta*
+#    LIBS += D:\Embedded\lib\opencv452\x64\mingw\lib\libopencv*
+#    LIBS += D:\Embedded\lib\SeetaFace\lib\libSeeta*
+#}
+win32{
+    INCLUDEPATH += F:\lib\opencv452\include
+    INCLUDEPATH += F:\lib\opencv452\include\opencv2
+    INCLUDEPATH += F:\lib\SeetaFace\include
+    INCLUDEPATH += F:\lib\SeetaFace\include\seeta
+
+    LIBS += F:\lib\opencv452\x64\mingw\lib\libopencv*
+    LIBS += F:\lib\SeetaFace\lib\libSeeta*
 }
 
 
 SOURCES += \
     main.cpp \
-    faceattendanceserver.cpp
+    faceattendanceserver.cpp \
+    qfaceobject.cpp \
+    registerwin.cpp
 
 HEADERS += \
-    faceattendanceserver.h
+    faceattendanceserver.h \
+    qfaceobject.h \
+    registerwin.h
 
 FORMS += \
-    faceattendanceserver.ui
+    faceattendanceserver.ui \
+    registerwin.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
